@@ -26,7 +26,7 @@ Users can explore:
   <img src="images/blackbody_multi_curves.png" width="800">
 </p>
 
-These curves show how the intensity and peak wavelength change with temperature.  
+These curves show how the intensity and peak wavelength change with temperature.
 Hotter objects emit more energy and peak at shorter wavelengths.
 
 ---
@@ -92,7 +92,7 @@ Blackbody radiation is important in:
 
 Code in this repository is released under the MIT Licence.
 
-Images, diagrams, written explanations, and educational content are © 2026 Biswajit Jana unless otherwise stated.  
+Images, diagrams, written explanations, and educational content are © 2026 Biswajit Jana unless otherwise stated.
 Please credit this repository if you reuse or adapt any visual or explanatory material.
 Educational images and written explanations are licensed under CC BY 4.0.
 Attribution is required.
@@ -108,7 +108,3 @@ Run:
 ```bash
 pip install -r requirements.txt
 python main.py
-
-## Research Quality Upgrade
-
-See [RESEARCH_QUALITY.md](RESEARCH_QUALITY.md) for the validation layer, reference anchors, equations and research boundaries added to this repository.
