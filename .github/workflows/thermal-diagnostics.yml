@@ -1,0 +1,21 @@
+name: Thermal scientific diagnostics
+on:
+  push:
+    branches: ['research/**']
+  pull_request:
+    paths: ['tools/**', 'tests/**', 'docs/thermal_diagnostics.md', '.github/workflows/thermal-diagnostics.yml']
+jobs:
+  numerical-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python tools/run_thermal_diagnostics.py --output outputs/thermal_diagnostics.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thermal-convergence-diagnostics
+          path: outputs/thermal_diagnostics.json
