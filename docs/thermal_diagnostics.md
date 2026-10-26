@@ -1,0 +1,5 @@
+# Stable thermal-spectrum diagnostics
+
+Three independent numerical checks supplement the visualiser: (1) stable SI Planck spectral radiance with overflow-safe high-frequency evaluation, (2) log-wavelength bolometric quadrature checked against the Stefan–Boltzmann law at several resolutions, and (3) idealised blue/red top-hat passband flux ratios, bisection colour-temperature inversion, and first-order correlated-flux uncertainty propagation.
+
+Run `python -m pip install -r requirements.txt`, `python -m unittest discover -s tests -v`, and `python tools/run_thermal_diagnostics.py --output outputs/thermal_diagnostics.json`. No new observations or inferred stellar temperatures are claimed. Top-hat passbands are idealised and exclude detector response, reddening, line blanketing, stellar atmospheres and filter calibration. Colour temperature is therefore not a calibrated effective temperature. The integration truncates the dimensionless Planck domain to `0.001 < hc/(lambda kT) < 50`; convergence is checked numerically and must be reconsidered if bounds change.
